@@ -1,0 +1,88 @@
+import { EventsService } from './events.service';
+export declare class EventsController {
+    private readonly eventsService;
+    constructor(eventsService: EventsService);
+    getAllEvents(req: any): Promise<{
+        id: number;
+        createdAt: Date;
+        title: string;
+        description: string | null;
+        startTime: Date;
+        endTime: Date;
+        location: string | null;
+        color: string;
+        allDay: boolean;
+        recurrence: string;
+        parentEventId: number | null;
+        originalStartTime: Date | null;
+        userId: number;
+        updatedAt: Date;
+    }[]>;
+    getEventsByRange(req: any, startDate: string, endDate: string): Promise<{
+        id: number;
+        createdAt: Date;
+        title: string;
+        description: string | null;
+        startTime: Date;
+        endTime: Date;
+        location: string | null;
+        color: string;
+        allDay: boolean;
+        recurrence: string;
+        parentEventId: number | null;
+        originalStartTime: Date | null;
+        userId: number;
+        updatedAt: Date;
+    }[]>;
+    getExpandedEvents(req: any, startDate: string, endDate: string): Promise<any[]>;
+    getOverlappingEvents(req: any, startTime: string, endTime: string, excludeId?: string): Promise<any[]>;
+    getEventById(req: any, id: string): Promise<{
+        id: number;
+        createdAt: Date;
+        title: string;
+        description: string | null;
+        startTime: Date;
+        endTime: Date;
+        location: string | null;
+        color: string;
+        allDay: boolean;
+        recurrence: string;
+        parentEventId: number | null;
+        originalStartTime: Date | null;
+        userId: number;
+        updatedAt: Date;
+    }>;
+    createEvent(req: any, body: any): Promise<{
+        id: number;
+        createdAt: Date;
+        title: string;
+        description: string | null;
+        startTime: Date;
+        endTime: Date;
+        location: string | null;
+        color: string;
+        allDay: boolean;
+        recurrence: string;
+        parentEventId: number | null;
+        originalStartTime: Date | null;
+        userId: number;
+        updatedAt: Date;
+    }>;
+    updateEvent(req: any, id: string, body: any): Promise<{
+        id: number;
+        createdAt: Date;
+        title: string;
+        description: string | null;
+        startTime: Date;
+        endTime: Date;
+        location: string | null;
+        color: string;
+        allDay: boolean;
+        recurrence: string;
+        parentEventId: number | null;
+        originalStartTime: Date | null;
+        userId: number;
+        updatedAt: Date;
+    }>;
+    deleteEvent(req: any, id: string, scope?: string, originalStartTime?: string): Promise<void>;
+}
